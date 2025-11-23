@@ -25,7 +25,6 @@ The project allows users to navigate through pages and view content dynamically.
 
 * React
 * React Router
-* HTML, CSS, JavaScript
 * Git & GitHub
 * Vercel (for hosting)
 
