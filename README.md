@@ -67,7 +67,7 @@ npm run dev
 ## 🌐 Live Demo
 
 You can view the deployed project here:
-[Live Website](https://your-vercel-link.vercel.app)
+[Live Website](https://web-advanced-project-lemon.vercel.app/)
 
 ---
 
