@@ -1,0 +1,287 @@
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f3f4f6;
+  color: #111827;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Main content layout */
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #f9fafb;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+/* Each page section (Overview, Courses, etc.) */
+.section {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
+.section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* Card style */
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Lists (Courses, Sessions, Notifications, etc.) */
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list li {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s ease;
+}
+
+.list li:hover {
+  background: #f9fafb;
+}
+
+/* Buttons */
+.primaryBtn {
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  font-weight: 500;
+}
+
+.primaryBtn:hover {
+  background-color: #4338ca;
+  transform: translateY(-1px);
+}
+
+.secondaryBtn {
+  background-color: #e5e7eb;
+  color: #111827;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.secondaryBtn:hover {
+  background-color: #d1d5db;
+}
+
+/* Danger buttons (e.g., delete) */
+.dangerBtn {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dangerBtn:hover {
+  background-color: #dc2626;
+}
+
+/* Charts */
+.chartContainer {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Text inputs, textarea, etc. */
+textarea,
+input,
+select {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+  resize: none;
+}
+
+textarea:focus,
+input:focus,
+select:focus {
+  border-color: #4f46e5;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.3);
+}
+
+/* Layout helpers */
+.flexRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+/* Scrollable content areas (e.g., Chat) */
+.scrollable {
+  max-height: 70vh;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.scrollable::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+  background-color: #9ca3af;
+  border-radius: 8px;
+}
+
+.scrollable::-webkit-scrollbar-thumb:hover {
+  background-color: #6b7280;
+}
+
+/* Navbar Title */
+.navTitle {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Empty state (no data) */
+.emptyState {
+  color: #6b7280;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Button grouping */
+.cardActions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+/* Sidebar collapsed */
+.sidebarCollapsed .mainContent {
+  margin-left: 0 !important;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Tablet view */
+@media (max-width: 1024px) {
+  .mainContent {
+    padding: 16px;
+  }
+
+  .section {
+    padding: 16px;
+  }
+
+  .list li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .cardActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .mainContent {
+    padding: 14px;
+  }
+
+  .section {
+    padding: 14px;
+  }
+
+  .navTitle {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .primaryBtn,
+  .secondaryBtn,
+  .dangerBtn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chartContainer {
+    padding: 10px;
+  }
+
+  .scrollable {
+    max-height: none;
+  }
+}
+
+/* Very small devices */
+@media (max-width: 480px) {
+  .section h2 {
+    font-size: 1.2rem;
+  }
+
+  .primaryBtn,
+  .secondaryBtn,
+  .dangerBtn {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+}
